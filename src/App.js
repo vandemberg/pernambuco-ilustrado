@@ -1,7 +1,13 @@
 import React from "react";
+import GlobalStyle from "./style/global";
 
 function App() {
-  return <h1> Pernambuco Ilustrado </h1>;
+  return (
+    <>
+      <GlobalStyle />
+      <p> Qualé</p>
+    </>
+  );
 }
 
 export default App;
