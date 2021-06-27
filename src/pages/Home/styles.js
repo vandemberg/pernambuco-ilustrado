@@ -1,15 +1,14 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
-  width: 100%;
-  height: 100%;
-
   display: flex;
   flex: 1;
   flex-direction: column;
   align-items: center;
 
   padding-top: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
 
   .logo {
     padding-top: 10px;
@@ -30,7 +29,8 @@ export const Main = styled.main`
   }
 
   .list-categories {
-    width: 80%;
     padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 `;

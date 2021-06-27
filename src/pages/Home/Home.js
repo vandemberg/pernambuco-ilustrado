@@ -2,9 +2,9 @@ import React from "react";
 
 import { Main } from "./styles.js";
 import logo from "../../assets/Logo.svg";
-import partners from "../../assets/partners.png";
 import { Link } from "react-router-dom";
-import Item from "../../components/Item/Item.js";
+import { ViewPictures } from "../../components/ViewPictures";
+import partners from "../../assets/partners.png";
 
 function Home() {
   return (
@@ -13,15 +13,7 @@ function Home() {
         <img className="logo" src={logo} alt="Logo pernambuco ilustrado" />
       </Link>
 
-      <div className="row list-categories">
-        <Item title="Sertão" />
-
-        <Item title="Sertão" />
-
-        <Item title="Sertão" />
-
-        <Item title="Sertão" />
-      </div>
+      <ViewPictures title="Regiões" list={[1, 2, 3, 4, 5, 6, 7]} />
 
       <img
         className="parceiros"
