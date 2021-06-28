@@ -1,45 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Main, Nav, Search } from "./styles";
-import Logo from "./../../assets/Logo.svg";
+import { useParams } from "react-router-dom";
+import { Main } from "./styles";
+import { ViewPictures } from "../../components/ViewPictures";
+import partners from "../../assets/partners.png";
+import { category } from "../../utils/gallery";
+import { Menu } from "../../components/Menu";
 
 function Gallery() {
+  const { id } = useParams();
+  const gallery = category[id];
+
   return (
     <>
-      <Nav>
-        <ul>
-          <li>
-            <Link to="/">
-              <img src={Logo} alt="Logo do Pernambuco Ilustrado" />
-            </Link>
-          </li>
-
-          <li>
-            <Link to="/sobre">Sobre</Link>
-          </li>
-
-          <li>
-            <Link to="/regioes">Regiões</Link>
-          </li>
-
-          <li>
-            <Link to="/contato">Contato</Link>
-          </li>
-
-          <li>
-            <Search>
-              <input type="text" placeholder="pesquisa" />
-            </Search>
-          </li>
-        </ul>
-      </Nav>
+      <Menu />
 
       <Main>
-        <section id="header">
-          <h1> Metropolitana Recife</h1>
+        <ViewPictures title={gallery.title} list={gallery.list} />
 
-          <Link> Visualizar galeria </Link>
-        </section>
+        <img
+          className="parceiros"
+          src={partners}
+          alt="Parceiros do pernambuco ilustrado"
+        />
       </Main>
     </>
   );

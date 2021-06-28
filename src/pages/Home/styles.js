@@ -7,8 +7,8 @@ export const Main = styled.main`
   align-items: center;
 
   padding-top: 20px;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 15%;
+  margin-right: 15%;
 
   .logo {
     padding-top: 10px;
