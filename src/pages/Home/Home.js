@@ -5,7 +5,7 @@ import logo from "../../assets/Logo.svg";
 import { Link } from "react-router-dom";
 import { ViewPictures } from "../../components/ViewPictures";
 import partners from "../../assets/partners.png";
-
+import { categories } from "../../utils";
 function Home() {
   return (
     <Main className="home">
@@ -13,7 +13,7 @@ function Home() {
         <img className="logo" src={logo} alt="Logo pernambuco ilustrado" />
       </Link>
 
-      <ViewPictures title="Regiões" list={[1, 2, 3, 4, 5, 6, 7]} />
+      <ViewPictures title="Regiões" list={categories} />
 
       <img
         className="parceiros"

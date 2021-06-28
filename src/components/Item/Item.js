@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container } from "./styles";
 
-function Item({ title, imageUrl }) {
+function Item({ title, imageUrl, handleClick }) {
   const [show, setShow] = useState(false);
 
   return (
@@ -11,7 +11,7 @@ function Item({ title, imageUrl }) {
         onMouseLeave={() => setShow(false)}
         onMouseEnter={() => setShow(true)}
       >
-        <div className="hover-effect"></div>
+        <div className="hover-effect" onClick={handleClick}></div>
         <div className="card-body"></div>
 
         {show && <div className="card-footer">{title}</div>}
