@@ -3,13 +3,16 @@ import { Carousel } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { Container, Image } from "./styles";
 
-function Banner({ list }) {
-  const [show, setShow] = useState(false);
+function Banner({ list, setShow, setArtifact }) {
+  const [hover, setHover] = useState(false);
   const history = useHistory();
 
   function handleClick(item) {
     if (item.type === "link") {
       history.push(item.url);
+    } else {
+      setShow(true);
+      setArtifact(item);
     }
   }
 
@@ -28,13 +31,13 @@ function Banner({ list }) {
           <Image imageUrl={item.image}>
             <div
               className="card"
-              onMouseLeave={() => setShow(false)}
-              onMouseEnter={() => setShow(true)}
+              onMouseLeave={() => setHover(false)}
+              onMouseEnter={() => setHover(true)}
             >
               <div className="hover-effect" onClick={handleClick}></div>
               <div className="card-body"></div>
 
-              {show && <div className="card-footer">{item.title}</div>}
+              {hover && <div className="card-footer">{item.title}</div>}
             </div>
           </Image>
         </Carousel.Item>

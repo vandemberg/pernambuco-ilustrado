@@ -4,7 +4,7 @@ import { Container } from "./styles";
 import { Grid } from "../Grid";
 import { Banner } from "../Banner";
 
-function ViewPictures({ list, title }) {
+function ViewPictures({ list, title, setShow, setArtifact }) {
   const [mode, setMode] = useState("grid");
 
   function changeMode() {
@@ -15,7 +15,11 @@ function ViewPictures({ list, title }) {
     <Container>
       <Title title={title} mode={mode} changeMode={changeMode} />
 
-      {mode === "grid" ? <Grid list={list} /> : <Banner list={list} />}
+      {mode === "grid" ? (
+        <Grid list={list} setShow={setShow} setArtifact={setArtifact} />
+      ) : (
+        <Banner list={list} setShow={setShow} setArtifact={setArtifact} />
+      )}
     </Container>
   );
 }

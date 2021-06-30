@@ -2,13 +2,15 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import Item from "../Item/Item";
 
-function Grid({ list }) {
+function Grid({ list, setShow, setArtifact }) {
   const history = useHistory();
 
   function handleClick(item) {
-    console.log(item);
     if (item.type === "link") {
       history.push(item.url);
+    } else {
+      setShow(true);
+      setArtifact(item);
     }
   }
 

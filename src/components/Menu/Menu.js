@@ -20,10 +20,6 @@ function Menu() {
           </Link>
         </li>
 
-        <li>
-          <Link to="/sobre">Sobre</Link>
-        </li>
-
         <NavDropdown title="Regiões" id="navbarScrollingDropdown">
           <NavDropdown.Item onClick={() => handleClick("metropolitana")}>
             Metropolitana
@@ -45,10 +41,6 @@ function Menu() {
             São Francisco
           </NavDropdown.Item>
         </NavDropdown>
-
-        <li>
-          <Link to="/contato">Contato</Link>
-        </li>
 
         <li>
           <Search>
